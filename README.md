@@ -1,3 +1,15 @@
 # Vietnamese NER with PhoBert-CRF
 
-Model ran on [VLSP2016 dataset](https://vlsp.org.vn/vlsp2016/eval/ner). 
+Model tried on [VLSP2016 dataset](https://vlsp.org.vn/vlsp2016/eval/ner).
+
+Put `train/` and `test/` at root.
+
+To train:
+```markdown
+./run_bertcrf.sh
+```
+
+To predict:
+```markdown
+./run_bertcrf_infer.sh
+```
