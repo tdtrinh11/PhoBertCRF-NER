@@ -1,0 +1,9 @@
+/test/
+/train/
+/infer/
+/runs/
+/model_output/
+.python-version
+.DS_Store
+.idea/
+NguyenDangDucTai.zip

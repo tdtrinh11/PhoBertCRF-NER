@@ -1,0 +1,14 @@
+python3 run_bertcrf.py \
+    --data_dir ./test/ \
+    --model_type bertcrf \
+    --model_name_or_path vinai/phobert-base \
+    --output_dir ./model_output/ \
+    --max_seq_length 128 \
+    --per_gpu_eval_batch_size 8 \
+    --gradient_accumulation_steps 8 \
+    --learning_rate 5e-5 \
+    --save_steps 100 \
+    --logging_steps 100 \
+    --seed 0 \
+    --overwrite_cache \
+    --do_infer #add this flag to do inference only
