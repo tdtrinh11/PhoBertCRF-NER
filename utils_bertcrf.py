@@ -93,10 +93,10 @@ def read_examples_from_file(data_dir, mode):
                             labels.append("O")
             # print("Done with: ", file_path)
 
-    if words:
-        examples.append(InputExample(guid="{}-{}".format(mode, guid_index), words=words, labels=labels))
-        guid_index += 1
-    print(f"Found {guid_index} examples.")
+                if words:
+                    examples.append(InputExample(guid="{}-{}".format(mode, guid_index), words=words, labels=labels))
+                    guid_index += 1
+                print(f"Found {guid_index} examples.")
     return examples
 
 
