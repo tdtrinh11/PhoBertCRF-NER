@@ -77,11 +77,11 @@ def read_examples_from_file(data_dir, mode):
                             labels = []
                     else:
                         splits = line.strip().split("\t")
-                        try:
-                            assert (len(splits) == 5)
-                        except:
-                            if mode != "test":
-                                print("Please check: ", splits)
+                        # try:
+                        #     assert (len(splits) == 5)
+                        # except:
+                        #     if mode != "test":
+                        #         print("Please check: ", splits)
                         words.append(splits[0])
                         if len(splits) > 1:
                             try:
