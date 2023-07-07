@@ -82,9 +82,10 @@ def read_examples_from_file(data_dir, mode):
                         # except:
                         #     if mode != "test":
                         #         print("Please check: ", splits)
-                        words.append(splits[0])
-                        labels.append(splits[1])
-                        # if len(splits) > 1:
+                        
+                        if len(splits) > 1:
+                            words.append(splits[0])
+                            labels.append(splits[1])
                         #     try:
                         #         labels.append(splits[3])
                         #     except: # if fail, this means we are in test/
@@ -251,7 +252,18 @@ def convert_examples_to_features(examples,
 
 
 def get_labels():
-    return ["O", "B-PER", "I-PER", "B-ORG", "I-ORG", "B-LOC", "I-LOC", "B-MISC", "I-MISC"]
+    return ["B-bien_phap_chan_doan",
+"B-bien_phap_dieu_tri",
+"B-nguyen_nhan_benh",
+"B-ten_benh",
+"B-trieu_chung_benh",
+"I-bien_phap_chan_doan",
+"I-bien_phap_dieu_tri",
+"I-nguyen_nhan_benh",
+"I-ten_benh",
+"I-trieu_chung_benh",
+"O"
+]
 
 
 def to_crf_pad(org_array, org_mask, pad_label_id=-100):
