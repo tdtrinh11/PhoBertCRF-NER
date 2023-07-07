@@ -83,14 +83,15 @@ def read_examples_from_file(data_dir, mode):
                         #     if mode != "test":
                         #         print("Please check: ", splits)
                         words.append(splits[0])
-                        if len(splits) > 1:
-                            try:
-                                labels.append(splits[3])
-                            except: # if fail, this means we are in test/
-                                labels.append("O")
-                        else:
-                            # Examples could have no label for mode = "test"
-                            labels.append("O")
+                        labels.append(splits[1])
+                        # if len(splits) > 1:
+                        #     try:
+                        #         labels.append(splits[3])
+                        #     except: # if fail, this means we are in test/
+                        #         labels.append("O")
+                        # else:
+                        #     # Examples could have no label for mode = "test"
+                        #     labels.append("O")
             # print("Done with: ", file_path)
 
                 if words:
