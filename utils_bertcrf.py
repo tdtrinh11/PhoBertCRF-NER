@@ -190,18 +190,20 @@ def convert_examples_to_features(examples,
             label_ids = [pad_token_label_id] + label_ids
             segment_ids = [cls_token_segment_id] + segment_ids
 
-        if model_name:
-            if model_name == 'xlm-roberta-base':
-                tokenizer = XLMRobertaTokenizer.from_pretrained(model_name)
-                input_ids = tokenizer.convert_tokens_to_ids(tokens)
-            elif model_name.startswith('bert'):
-                tokenizer = BertTokenizer.from_pretrained(model_name)
-                input_ids = tokenizer.convert_tokens_to_ids(tokens)
-            elif model_name == 'roberta':
-                tokenizer = RobertaTokenizer.from_pretrained(model_name)
-                input_ids = tokenizer.convert_tokens_to_ids(tokens)
-        else:
-            input_ids = tokenizer.convert_tokens_to_ids(tokens)
+        # if model_name:
+        #     if model_name == 'xlm-roberta-base':
+        #         tokenizer = XLMRobertaTokenizer.from_pretrained(model_name)
+        #         input_ids = tokenizer.convert_tokens_to_ids(tokens)
+        #     elif model_name.startswith('bert'):
+        #         tokenizer = BertTokenizer.from_pretrained(model_name)
+        #         input_ids = tokenizer.convert_tokens_to_ids(tokens)
+        #     elif model_name == 'roberta':
+        #         tokenizer = RobertaTokenizer.from_pretrained(model_name)
+        #         input_ids = tokenizer.convert_tokens_to_ids(tokens)
+        # else:
+        #     input_ids = tokenizer.convert_tokens_to_ids(tokens)
+
+        input_ids = tokenizer.convert_tokens_to_ids(tokens)
 
         # The mask has 1 for real tokens and 0 for padding tokens. Only real
         # tokens are attended to.
